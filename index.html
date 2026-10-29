@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#071a19" />
+  <meta name="description" content="鳶嘴山 × 稍來山一日登山行程，開啟互動式 3D 行程模擬。" />
+  <title>鳶嘴山 × 稍來山｜登山行程首頁</title>
+  <style>
+    :root{color-scheme:dark;--bg:#071a19;--surface:#0d2826;--white:#f2f7f1;--muted:#a6b9b1;--accent:#c7ec96;--line:rgba(234,255,237,.14)}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;min-height:100vh;font-family:system-ui,-apple-system,"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;color:var(--white);background:radial-gradient(ellipse 850px 590px at 82% 20%,rgba(71,142,108,.22),transparent 70%),radial-gradient(ellipse 550px 500px at 4% 91%,rgba(38,107,100,.17),transparent 75%),var(--bg)}
+    a{color:inherit}
+    .wrap{width:min(1100px,calc(100% - 42px));margin:0 auto}
+    header{display:flex;justify-content:space-between;align-items:center;padding:29px 0;border-bottom:1px solid var(--line)}
+    .logo{font-size:15px;font-weight:800;letter-spacing:.14em;display:flex;align-items:center;gap:10px}
+    .logo-mark{display:grid;place-items:center;border:1px solid #a1c99e;color:var(--accent);border-radius:11px;width:36px;height:36px}
+    header small{color:var(--muted);letter-spacing:.09em;font-size:12px}
+    main{display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:45px;min-height:calc(100svh - 164px);padding:65px 0 85px}
+    .eyebrow{font-size:12px;color:var(--accent);font-weight:800;letter-spacing:.22em;margin-bottom:23px}
+    h1{font-size:clamp(39px,6vw,73px);letter-spacing:-.055em;line-height:1.14;margin:0 0 25px;font-weight:800}
+    h1 span{color:var(--accent)}
+    .intro{color:var(--muted);line-height:1.95;font-size:16px;max-width:570px;margin:0 0 32px}
+    .tags{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:37px}
+    .tag{font-size:12px;letter-spacing:.02em;border:1px solid var(--line);background:rgba(255,255,255,.035);padding:9px 13px;border-radius:50px}
+    .cta{display:inline-flex;align-items:center;justify-content:center;gap:12px;background:var(--accent);border-radius:14px;color:#12231b;text-decoration:none;font-size:16px;font-weight:800;min-height:61px;padding:0 28px;box-shadow:0 12px 37px rgba(140,214,123,.12);transition:transform .18s,background .18s}
+    .cta:hover{transform:translateY(-3px);background:#dbf6ba}.cta:focus-visible{outline:3px solid white;outline-offset:4px}
+    .under{font-size:12px;color:#8ea69e;margin-top:19px;line-height:1.7}
+    .panel{border:1px solid var(--line);border-radius:29px;overflow:hidden;background:linear-gradient(150deg,rgba(25,71,62,.95),rgba(8,28,29,.97));box-shadow:0 35px 100px rgba(0,0,0,.22)}
+    .visual{position:relative;height:290px;background:radial-gradient(ellipse at 45% 60%,#315f50 0%,#153d36 46%,#0e302d 80%);display:grid;place-items:center;overflow:hidden}
+    .visual:before{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(6,20,20,.6),transparent 46%)}
+    .visual svg{width:100%;height:100%;position:relative}
+    .visual-label{position:absolute;right:21px;top:20px;border:1px solid rgba(200,235,207,.25);border-radius:40px;background:rgba(6,30,28,.45);backdrop-filter:blur(8px);padding:9px 13px;color:#cfe5d3;font-size:11px;letter-spacing:.12em}
+    .panel-content{padding:28px 27px 30px}
+    .panel-title{font-weight:800;font-size:20px;margin-bottom:19px}
+    .route{display:flex;gap:7px;align-items:center;flex-wrap:wrap;color:#e8f4e9;font-size:13px;line-height:2}
+    .route em{color:var(--accent);font-style:normal;font-weight:800}
+    .route b{color:#668e82;font-weight:400}
+    .divider{height:1px;background:var(--line);margin:21px 0}
+    .details{display:grid;grid-template-columns:1fr 1fr;gap:17px}
+    .details small{display:block;color:var(--muted);margin-bottom:6px;font-size:12px}
+    .details strong{font-size:14px;font-weight:750}
+    footer{border-top:1px solid var(--line);padding:23px 0 32px;color:#91a7a1;font-size:12px;line-height:1.7}
+    @media(max-width:800px){header{padding:21px 0}main{grid-template-columns:1fr;gap:37px;padding:60px 0 65px;min-height:0}.panel{max-width:620px}.visual{height:240px}header small{display:none}}
+    @media(max-width:440px){.wrap{width:min(100% - 34px,1100px)}h1{font-size:41px}.intro{font-size:15px}.cta{width:100%}.panel-content{padding:22px 19px 24px}.details{gap:11px}.details strong{font-size:13px}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="logo"><span class="logo-mark" aria-hidden="true">▲</span> MOUNTAIN JOURNEY</div>
+      <small>TAICHUNG · DAY HIKE</small>
+    </header>
+    <main>
+      <section aria-labelledby="title">
+        <div class="eyebrow">3D INTERACTIVE ITINERARY</div>
+        <h1 id="title">鳶嘴山<span> × </span><br>稍來山</h1>
+        <p class="intro">從台中沙鹿出發，前往大雪山林道，挑戰鳶嘴山岩稜並走訪稍來山。透過互動式 3D 行程模擬，預先掌握路線、時間安排與注意事項。</p>
+        <div class="tags" aria-label="行程特色">
+          <span class="tag">一日往返</span><span class="tag">鳶嘴山攀岩路段</span><span class="tag">3D 路線預覽</span><span class="tag">手機可觀看</span>
+        </div>
+        <a class="cta" href="./index-1.html" aria-label="開啟鳶嘴山及稍來山3D行程模擬">開啟 3D 行程模擬 <span aria-hidden="true">↗</span></a>
+        <p class="under">按下按鈕，前往同一網站中的 <code>index-1.html</code>。<br>請確認此檔案和首頁位於同一個資料夾。</p>
+      </section>
+      <aside class="panel" aria-label="登山行程摘要">
+        <div class="visual" aria-hidden="true">
+          <span class="visual-label">ROUTE PREVIEW</span>
+          <svg viewBox="0 0 520 290" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+            <defs><linearGradient id="mount" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#578d76"/><stop offset="1" stop-color="#123d35"/></linearGradient><linearGradient id="front" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#3b7666"/><stop offset="1" stop-color="#11382e"/></linearGradient></defs>
+            <path d="M-50 260L50 171L115 216L228 69L330 186L388 129L550 271Z" fill="url(#mount)" opacity=".8"/>
+            <path d="M-25 285L90 209L180 251L260 150L327 216L409 176L550 280Z" fill="url(#front)"/>
+            <path d="M35 260Q115 241 165 210T236 139Q266 133 285 181T345 220Q393 242 467 261" fill="none" stroke="#e2f3aa" stroke-width="3.7" stroke-linecap="round" stroke-dasharray="8 8"/>
+            <circle cx="236" cy="139" r="8" fill="#d3f2a5" stroke="#0c382d" stroke-width="3"/><circle cx="345" cy="220" r="6" fill="#d3f2a5" stroke="#0c382d" stroke-width="2"/>
+            <text x="250" y="116" fill="#f7fff4" font-size="15" font-weight="700">鳶嘴山</text>
+            <text x="362" y="213" fill="#f0fff0" font-size="14" font-weight="700">稍來山</text>
+          </svg>
+        </div>
+        <div class="panel-content">
+          <div class="panel-title">路線概覽</div>
+          <div class="route"><em>27K 登山口</em> <b>→</b> 鳶嘴山 <b>→</b> 稍來山 <b>→</b> <em>29K 下山</em></div>
+          <div class="divider"></div>
+          <div class="details"><div><small>出發地點</small><strong>台中沙鹿</strong></div><div><small>交通方式</small><strong>自行開車</strong></div><div><small>預計出發</small><strong>05:30</strong></div><div><small>登山預留</small><strong>6–7 小時</strong></div></div>
+        </div>
+      </aside>
+    </main>
+    <footer>提醒：3D 行程模擬為路線示意，不代表經驗證的實測 GPS 軌跡。現場登山請以官方公告、天氣與可靠離線地圖為準。</footer>
+  </div>
+</body>
+</html>
