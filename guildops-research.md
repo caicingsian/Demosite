@@ -32,7 +32,10 @@
 9. 使用者輸入的 HTML 以文字呈現；執行期間無 JavaScript 錯誤。
 10. 桌面及 390px 手機版無橫向溢出；搜尋結果正確。
 
-本機完整操作驗證通過，公開網站驗證結果於發布後補充。
+本機與公開網站完整操作驗證均通過。GitHub Pages 部署成功，公開頁面取得 HTTP 200。
+公開驗證使用帶版本查詢參數的網址避開發布前的 404 快取。環境 Chromium 不信任代理憑證，因此以 Python 系統 CA 驗證 HTTPS 並讀取公開 HTML，再交由 Chromium 在公開網址 origin 執行同一套端到端操作；未停用 TLS 驗證。
+
+發布驗收過程發現兩項環境問題：Chromium 憑證信任差異、部署前的 404 快取。兩者皆由 Agent 自行診斷並調整驗證方式，未要求使用者介入。
 
 ## 可重現方式
 需要 Python 3、Playwright Python 套件及 /usr/bin/chromium。
