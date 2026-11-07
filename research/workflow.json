@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "project": "GuildOps",
+  "phase": "user_research",
+  "role": "user-research",
+  "status": "waiting_for_feedback",
+  "goal": "觀察真實使用者完成任務流程，找出下一輪最值得修正的阻礙。",
+  "evidence": [
+    {"kind": "artifact", "reference": "guildops.html"},
+    {"kind": "engineering_acceptance", "reference": "guildops-research.md"},
+    {"kind": "reproducible_test", "reference": "tests/test_guildops.py"}
+  ],
+  "next_actions": [
+    "請試用者從成員提案到管理者驗收完整操作一輪，記錄需要協助的地方。",
+    "將實際回饋分成觀察、推論與建議，排序下一輪優先級。"
+  ],
+  "blockers": ["尚無真實試用紀錄，不能評估使用者是否能獨立完成流程。"],
+  "background_execution": false,
+  "skill_workflow_validation": "尚未以新一輪完整迭代驗證；本檔案的工程驗收引用前一輪交付。"
+}
