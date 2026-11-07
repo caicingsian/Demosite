@@ -1,11 +1,20 @@
 from playwright.sync_api import sync_playwright
 import json
 import os
+import urllib.request
 with sync_playwright() as p:
  b=p.chromium.launch(executable_path='/usr/bin/chromium',args=['--no-sandbox'])
  page=b.new_page(viewport={'width':1440,'height':1000});errors=[]
  page.on('pageerror',lambda e:errors.append(str(e)))
- page.goto(os.environ.get('GUILDOPS_URL','http://127.0.0.1:8771/guildops.html'))
+ url=os.environ.get('GUILDOPS_URL','http://127.0.0.1:8771/guildops.html')
+ # Use Python's configured CA trust for this environment's HTTPS proxy.
+ # TLS verification remains enabled; Chromium executes the fetched public HTML.
+ if url.startswith('https://'):
+  def verified_fetch(route):
+   with urllib.request.urlopen(route.request.url,timeout=30) as response:
+    route.fulfill(status=response.status,content_type='text/html; charset=utf-8',body=response.read())
+  page.route(url,verified_fetch)
+ page.goto(url)
  page.get_by_role('button',name='＋ 提出任務').click()
  page.locator('#title').fill('研究驗證任務')
  page.locator('#description').fill('完成自主工作流驗證 <script>alert(1)</script>')
